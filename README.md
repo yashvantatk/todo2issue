@@ -81,6 +81,13 @@ Note from the docs: a provider error (4xx/5xx) still exits `0`, so todo2issue ch
 
 Known limits: de-dupe only sees the first 30 open issues (get1 default `per_page=30`) and ignores closed ones; Node prints a `DEP0190` warning because I spawn `swy` with `shell: true` (npm installs it as `swy.cmd` on Windows).
 
+## Screenshots and logs
+![Dry-run with Authorization redacted](screenshots/dry-run.png)
+![get1 list returning 200](screenshots/list-200.png)
+![Issues created on GitHub](screenshots/issues.png)
+
+Full redacted run log: [logs/run-log.md](logs/run-log.md)
+
 ## Demo
 <VIDEO LINK>
 
