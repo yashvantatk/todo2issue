@@ -89,7 +89,7 @@ Known limits: de-dupe only sees the first 30 open issues (get1 default `per_page
 Full redacted run log: [logs/run-log.md](logs/run-log.md)
 
 ## Demo
-<VIDEO LINK>
+Watch the demo: https://youtu.be/gyCU685gAgc
 
 ## Notes on the generated Wrekenfile
 - Location: `.swytchcode/integrations/GitHub/github/1.1.4/wrekenfile.yaml`, about 100k lines generated from GitHub's REST spec, plus `methods.json` listing canonical IDs.
