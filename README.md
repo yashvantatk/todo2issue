@@ -30,17 +30,17 @@ swy add github.issue.get1
 swy auth connect github            # picked 2) <github>, browser OAuth
 swy auth status
 Set-Content body.json '{"title": "Hello from Swytchcode", "body": "First API call via swy exec"}'
-swy exec github.issue.create --input owner=yashvantatk --input repo=swytch --body body.json --dry-run
-swy exec github.issue.create --input owner=yashvantatk --input repo=swytch --body body.json
-swy exec github.issue.get1 --input owner=yashvantatk --input repo=swytch
+swy exec github.issue.create --input owner=yashvantatk --input repo=todo2issue --body body.json --dry-run
+swy exec github.issue.create --input owner=yashvantatk --input repo=todo2issue --body body.json
+swy exec github.issue.get1 --input owner=yashvantatk --input repo=todo2issue
 node todo2issue.js sample --dry-run
 node todo2issue.js sample
 node todo2issue.js sample          # second run: everything skipped
 ```
 
 ## What worked
-- **First live call:** `swy exec github.issue.create` returned `status_code 201` and created [issue #1](https://github.com/yashvantatk/swytch/issues/1).
-- **Dry-run** printed the full request (`POST https://api.github.com/repos/yashvantatk/swytch/issues`) with `"Authorization": "[REDACTED]"`, so I could check it before sending anything.
+- **First live call:** `swy exec github.issue.create` returned `status_code 201` and created [issue #1](https://github.com/yashvantatk/todo2issue/issues/1).
+- **Dry-run** printed the full request (`POST https://api.github.com/repos/yashvantatk/todo2issue/issues`) with `"Authorization": "[REDACTED]"`, so I could check it before sending anything.
 - **Listing:** `swy exec github.issue.get1` returned `200` and issue #1. The CLI filled the query defaults from the Wrekenfile itself (`state=open&sort=created&direction=desc&per_page=30&page=1`).
 - **todo2issue:** dry-run previewed 3 issues; the live run created #2, #3, #4; the re-run printed `SKIP (already filed)` for all three.
 - Every response comes wrapped as `{data, request, status_code}`, which made scripting easy.
