@@ -6,7 +6,7 @@ const os = require("os");
 const { spawnSync } = require("child_process");
 
 const OWNER = "yashvantatk";
-const REPO = "swytch";
+const REPO = "todo2issue";
 const folder = process.argv[2] || ".";
 const dryRun = process.argv.includes("--dry-run");
 
